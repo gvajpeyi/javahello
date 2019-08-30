@@ -16,6 +16,27 @@
     </dependency>
   </dependencies>
   
+  <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>0.0.4</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>testcucumber</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-html-reports</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            <enableFlashCharts>true</enableFlashCharts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+  
   <build>
     <plugins>
       <plugin>
